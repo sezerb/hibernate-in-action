@@ -22,7 +22,7 @@ public class Product {
 
     //private BigDecimal tax;
 
-    @ManyToOne
-    private Customer customer;
+//    @ManyToOne
+//    private Customer customer;
 }
 

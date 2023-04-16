@@ -25,9 +25,9 @@ class Customer {
 
     private Metadata metadata;
 
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private Set<Product> products;
+//    @JsonIgnore
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+//    private Set<Product> products;
 
     private int balance;
 

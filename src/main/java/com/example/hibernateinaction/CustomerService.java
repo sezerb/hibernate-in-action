@@ -17,4 +17,12 @@ public class CustomerService {
     public List<Customer> list() {
         return new ArrayList<>(this.customerRepository.findAll());
     }
+
+    public Customer create(Customer customer) {
+        return this.customerRepository.save(customer);
+    }
+    
+    public void delete(Long id) {
+        this.customerRepository.deleteById(id);
+    }
 }

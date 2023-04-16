@@ -36,13 +36,13 @@ public class HibernateInActionApplication {
 			p1.setTitle("iphone");
 			p1.setPrice(BigDecimal.valueOf(1000));
 			//p1.setTax(BigDecimal.valueOf(200));
-			p1.setCustomer(customer);
+//			p1.setCustomer(customer);
 
 			Product p2 = new Product();
 			p2.setTitle("android");
 			p2.setPrice(BigDecimal.valueOf(1000));
 			//p2.setTax(BigDecimal.valueOf(200));
-			p2.setCustomer(customer);
+//			p2.setCustomer(customer);
 
 			productRepository.saveAll(Set.of(p1, p2));
 
