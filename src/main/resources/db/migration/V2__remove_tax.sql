@@ -1,1 +1,0 @@
-alter table product drop column tax

@@ -1,13 +1,9 @@
 package com.example.hibernateinaction;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
-import lombok.Generated;
 import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -25,13 +21,9 @@ class Customer {
 
     private Metadata metadata;
 
-//    @JsonIgnore
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-//    private Set<Product> products;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private Set<Product> products;
 
     private int balance;
-
-    @Formula(value = "balance * 0.2")
-    private int tax;
 
 }

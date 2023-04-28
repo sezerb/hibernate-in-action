@@ -2,6 +2,7 @@ package com.example.hibernateinaction;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -19,10 +20,11 @@ public class Product {
     private Metadata metadata;
 
     private BigDecimal price;
+    
+    @Formula(value = "price * 0.18")
+    private BigDecimal tax;
 
-    //private BigDecimal tax;
-
-//    @ManyToOne
-//    private Customer customer;
+    @ManyToOne
+    private Customer customer;
 }
 

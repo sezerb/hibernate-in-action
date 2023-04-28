@@ -22,33 +22,33 @@ public class HibernateInActionApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(final CustomerRepository repository, final ProductRepository productRepository)
+	CommandLineRunner commandLineRunner(final CustomerService customerService, final ProductService productService)
 	{
 		return args -> {
 			Customer customer = new Customer();
 			customer.setName("Baris");
 			customer.setType(CustomerType.ELITE);
 			customer.setBalance(100);
-			repository.save(customer);
+			customerService.create(customer);
 
 			// Products
 			Product p1 = new Product();
 			p1.setTitle("iphone");
 			p1.setPrice(BigDecimal.valueOf(1000));
-			//p1.setTax(BigDecimal.valueOf(200));
-//			p1.setCustomer(customer);
+			p1.setCustomer(customer);
+			productService.create(p1);
 
 			Product p2 = new Product();
 			p2.setTitle("android");
 			p2.setPrice(BigDecimal.valueOf(1000));
-			//p2.setTax(BigDecimal.valueOf(200));
-//			p2.setCustomer(customer);
+			p2.setCustomer(customer);
+			productService.create(p2);
 
-			productRepository.saveAll(Set.of(p1, p2));
 
-			List<Customer> customers = repository.findAll();
+			List<Customer> customers = customerService.list();
 
 			System.out.println(customer);
+
 		};
 	}
 }

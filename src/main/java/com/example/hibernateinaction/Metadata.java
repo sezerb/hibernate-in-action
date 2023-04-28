@@ -1,9 +1,5 @@
 package com.example.hibernateinaction;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Embeddable;
 import java.sql.Timestamp;
 

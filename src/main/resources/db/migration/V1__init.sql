@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS product (
                          id SERIAL PRIMARY KEY,
                          title VARCHAR(255) NOT NULL,
                          price DECIMAL NOT NULL,
-                         tax DECIMAL NOT NULL,
                          created_at TIMESTAMP DEFAULT NULL,
                          updated_at TIMESTAMP DEFAULT NULL,
                          customer_id INTEGER NOT NULL REFERENCES customer(id)

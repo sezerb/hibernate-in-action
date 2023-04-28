@@ -15,13 +15,15 @@ public class CustomerService {
 
     @Transactional
     public List<Customer> list() {
-        return new ArrayList<>(this.customerRepository.findAll());
+        return this.customerRepository.findAll();
     }
 
+    @Transactional
     public Customer create(Customer customer) {
         return this.customerRepository.save(customer);
     }
-    
+
+    @Transactional
     public void delete(Long id) {
         this.customerRepository.deleteById(id);
     }
